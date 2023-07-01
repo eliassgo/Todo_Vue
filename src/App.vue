@@ -4,7 +4,7 @@ import Cabecalho from './components/Cabecalho.vue';
 import Formulario from './components/Formulario.vue';
 import ListaDeTarefas from './components/ListaDeTarefas.vue';
 
-// Estado das tarefas 
+// Estado das tarefas. Atualização dinâmica e automáticas das aplicações Web
 const estado = reactive({
   filtro: 'todas',
   tarefaTemp: '',
