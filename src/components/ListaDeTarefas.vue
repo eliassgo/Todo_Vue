@@ -6,6 +6,7 @@ const props = defineProps(['tarefas', 'quantDeTarefas']);
     <!-- Fazer uma edição para se a lista estiver vazia, aparecer uma mensagem dizendo não existe tarefas -->
     <div v-if="quantDeTarefas > 0">
         <ul class="list-group mt-4">
+            <!-- v-for, que permite renderizar listas de elementos com base em uma matriz de dados.-->
             <li class="list-group-item" v-for="tarefa in props.tarefas">
                 <input @change="evento => tarefa.finalizada = evento.target.checked" type="checkbox"
                     :checked="tarefa.finalizada" :id="tarefa.titulo">
