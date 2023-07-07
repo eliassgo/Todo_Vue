@@ -28,6 +28,7 @@ const estado = reactive({
 const getTarefasPendentes = () => {
   return estado.tarefas.filter(tarefa => !tarefa.finalizada)
 }
+
 // Função para obter tarefas Finalizadas 
 const getTarefasFinalizadas = () => {
   return estado.tarefas.filter(tarefa => tarefa.finalizada)
@@ -46,7 +47,6 @@ const getTarefasFiltradas = () => {
       return estado.tarefas;
   }
 }
-
 // Adicionar tarefas
 const cadastraTarefa = () => {
   const tarefaNova = {
@@ -63,7 +63,7 @@ const cadastraTarefa = () => {
     <Cabecalho :tarefasPendentes="getTarefasPendentes().length" />
     <Formulario :trocarFiltro="evento => estado.filtro = evento.target.value" :tarefaTemp="estado.tarefaTemp"
       :editaTarefaTemp="evento => estado.tarefaTemp = evento.target.value" :cadastraTarefa="cadastraTarefa" />
-    <ListaDeTarefas :tarefas="getTarefasFiltradas()" />
+    <ListaDeTarefas :tarefas="getTarefasFiltradas()" :quantDeTarefas="getTarefasPendentes().length" />
   </div>
 </template>
 
